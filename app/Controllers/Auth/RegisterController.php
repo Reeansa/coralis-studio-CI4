@@ -32,7 +32,7 @@ class RegisterController extends BaseController
         ];
 
         if (!$this->validateData($data, $rules)) {
-            return redirect()->back()->with('errors', $this->validator->getErrors())->withInput();
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
 
         $file = $this->request->getFile('profile_picture');

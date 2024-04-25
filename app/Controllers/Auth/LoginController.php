@@ -30,7 +30,7 @@ class LoginController extends BaseController
         ];
 
         if (!$this->validateData($data, $rules)) {
-            return redirect()->back()->withInput('errors', $this->validator->getErrors());
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
 
         $model = model(UsersModel::class);

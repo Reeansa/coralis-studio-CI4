@@ -16,7 +16,7 @@ class ForgotPasswordController extends BaseController
 
     public function sendToken(): RedirectResponse
     {
-        $email = $this->request->getPost(['email']);
+        $email = $this->request->getPost('email');
         $rules = [
             'email' => [
                 'rules' => 'required|is_not_unique[users.email]',
@@ -27,7 +27,7 @@ class ForgotPasswordController extends BaseController
         ];
 
         if (!$this->validateData($email, $rules)) {
-            return redirect()->back()->withInput('errors', $this->validator->getErrors());
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
 
         $services = service('email');
