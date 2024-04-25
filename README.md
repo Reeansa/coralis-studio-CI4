@@ -7,6 +7,10 @@ Please create a web application with Codeigniter Framework with the following fu
 
 Please note that **SQL files** must be included.
 
+## Version
+**this is codeigniter 4 version**, dont forget to see **codeigniter 3 version**
+link here : https://github.com/Reeansa/coralis-studio
+
 ## Step by Step
 1. do `composer install` in terminal
 2. do `cp cp.example .env` to duplicate the .env file
