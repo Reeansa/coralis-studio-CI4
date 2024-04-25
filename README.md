@@ -1,68 +1,45 @@
-# CodeIgniter 4 Application Starter
+# TEST REQUIREMENTS CORALIS STUDIO
+## Case Study
+Please create a web application with Codeigniter Framework with the following function:
+1. Registration form with email, name, password, and a profile picture upload.
+2. A login page and landing page showing the submitted information.
+3. A proper forgot password feature
 
-## What is CodeIgniter?
+Please note that **SQL files** must be included.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+## Version
+**this is codeigniter 4 version**, dont forget to see **codeigniter 3 version**
+link here : https://github.com/Reeansa/coralis-studio
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+## Step by Step
+1. do `composer install` in terminal
+2. do `cp cp.example .env` to duplicate the .env file
+   and don't forget to un-comment the **CI_ENVIRONMENT** and **APP.baseURL**
+   
+   ![Screenshot 2024-04-26 000855](https://github.com/Reeansa/coralis-studio-ci4/assets/92510276/a6b36154-62cb-4d2f-b05a-dd5c3f5efd05)
+3. first create a database manual with the name **carolis_studio** or import the SQL that I have provided in the **SQL file** folder.
+   
+   ![Screenshot 2024-04-26 001239](https://github.com/Reeansa/coralis-studio-ci4/assets/92510276/d05c32ac-bae2-46a6-95ed-d315d9700305)
+4. if you created the database manual, do `php spark migrate` but if importing via **SQL file** ignore this step.
+5. run the program with the command `php spark serve --port 8081`, if the port is already used in another program, you can change it as desired, but don't forget to change the `app.baseURL` in the **.env** to adjust to the link that has been created.
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+**Notes: create an account first before login.**
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+## Results
+### Login
+![image](https://github.com/Reeansa/coralis-studio-ci4/assets/92510276/7518f702-22c7-4d3e-925c-d7ebacf65c77)
+### Register
+![image](https://github.com/Reeansa/coralis-studio-ci4/assets/92510276/fd9ab0a1-bf4b-4fde-9f6c-1685b5eda7df)
+### Forgot Password
+![image](https://github.com/Reeansa/coralis-studio-ci4/assets/92510276/78f94a8a-14f3-4d43-8542-6a967324a61d)
+![image](https://github.com/Reeansa/coralis-studio-ci4/assets/92510276/31dbeb3f-8a38-4882-a6b2-1cc10a01c0cf)
+![image](https://github.com/Reeansa/coralis-studio-ci4/assets/92510276/eee11474-0bea-4528-b33e-e96199fc9ff3)
+### alert (Notification, Error, Success)
+![image](https://github.com/Reeansa/coralis-studio-ci4/assets/92510276/f592e062-3df5-4f10-8aec-410a09919d5b)
+![image](https://github.com/Reeansa/coralis-studio-ci4/assets/92510276/842e998e-ca47-480c-ba0a-f9da7780a495)
+![image](https://github.com/Reeansa/coralis-studio-ci4/assets/92510276/96982f93-a206-4dba-85f4-5fa6f099fda7)
+### Showing The Submitted Information
+![image](https://github.com/Reeansa/coralis-studio-ci4/assets/92510276/0ba317a3-f4c0-4202-b293-33782b275754)
 
-## Installation & updates
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
-
-## Setup
-
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
-
-## Important Change with index.php
-
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
-
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
-
-**Please** read the user guide for a better explanation of how CI4 works!
-
-## Repository Management
-
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
-
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
-
-## Server Requirements
-
-PHP version 8.1 or higher is required, with the following extensions installed:
-
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
-
-> [!WARNING]
-> The end of life date for PHP 7.4 was November 28, 2022.
-> The end of life date for PHP 8.0 was November 26, 2023.
-> If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> The end of life date for PHP 8.1 will be November 25, 2024.
-
-Additionally, make sure that the following extensions are enabled in your PHP:
-
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
